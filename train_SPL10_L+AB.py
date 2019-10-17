@@ -298,9 +298,9 @@ if __name__ == '__main__':
         writer.add_scalar('Contrastive_Loss/local_loss', stats.mean(loss_local_rgb), global_step=epoch)
         writer.add_scalar('Contrastive_Loss/prior_loss', stats.mean(loss_prior_rgb), global_step=epoch)
         # writer.add_scalar('Contrastive_Loss/pixel_loss', stats.mean(loss_pixel), global_step=epoch)
-        # writer.add_image('Contrastive/l',
-        #                       torchvision.utils.make_grid(l[:3].clone().cpu().data, 3,
-        #                                                 normalize=True), global_step=epoch)
+        writer.add_image('Contrastive/image',
+                               torchvision.utils.make_grid(image[:3].clone().cpu().data, 3,
+                                                         normalize=True), global_step=epoch)
         if isinstance(result['l_gen'], list):
             for i, (gen_l,gen_ab, l_label,ab_label) in enumerate(zip(result['l_gen'],result['ab_gen'],l,ab)):
                 b,c,h,w = gen_l.size()
