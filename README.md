@@ -1,1 +1,1 @@
-# CrossInfoMax
+# CrossInfoMax with RGB+LAB
